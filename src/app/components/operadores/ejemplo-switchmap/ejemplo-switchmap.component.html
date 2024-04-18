@@ -1,0 +1,8 @@
+<div class="container mt-3">
+    <div class="form-group">
+      <input type="text" [formControl]="searchControl" class="form-control" placeholder="Search...">
+    </div>
+    <ul class="list-group" *ngIf="results$ | async as results">
+      <li class="list-group-item" *ngFor="let item of results">{{ item.name }}</li>
+    </ul>
+</div>

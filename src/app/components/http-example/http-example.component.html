@@ -1,0 +1,6 @@
+<div *ngIf="data; else loading">
+    {{ data | json }}
+  </div>
+  <ng-template #loading>
+    Cargando...
+  </ng-template>

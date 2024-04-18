@@ -1,0 +1,10 @@
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of users$ | async" (click)="selectUser(user.id)">
+          {{ user.name }}
+        </li>
+      </ul>
+      <div *ngIf="selectedUser$ | async as selectedUser">
+        <p class="alert alert-info mt-3">Selected User: {{ selectedUser.name }}</p>
+      </div>
+</div>
