@@ -10,14 +10,9 @@ import { Observable, combineLatest, map, startWith } from 'rxjs';
 export class EjemploCombineLatestComponent {
   controlOne = new FormControl();
   controlTwo = new FormControl();
-  combinedResult$: Observable<string>;
+  //combinedResult$: Observable<string>;
 
   constructor() {
-    this.combinedResult$ = combineLatest([
-      this.controlOne.valueChanges.pipe(startWith(this.controlOne.value)),
-      this.controlTwo.valueChanges.pipe(startWith(this.controlTwo.value))
-    ]).pipe(
-      map(([first, second]) => `First: ${first}, Second: ${second}`)
-    );
+    
   }
 }

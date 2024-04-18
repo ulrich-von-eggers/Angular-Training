@@ -14,19 +14,10 @@ export class HttpExampleComponent {
   constructor(private dataService: HttpExampleService) { }
 
   ngOnInit(): void {
-    this.subscription = this.dataService.fetchData().subscribe({
-      next: (result) => {
-        this.data = result;
-      },
-      error: (error) => {
-        console.error('Error al cargar datos:', error);
-      }
-    });
+    
   }
 
   ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    
   }
 }

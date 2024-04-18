@@ -21,21 +21,4 @@ export class EjemploSelectoresService extends ComponentStore<UserState>{
   constructor() {
     super({ users: [] });
   }
-
-  readonly users$ = this.select(state => state.users);
-  readonly selectedUserId$ = this.select(state => state.selectedUserId);
-  readonly selectedUser$: Observable<User | undefined> = this.select(
-    this.users$,
-    this.selectedUserId$,
-    (users, selectedUserId) => users.find(user => user.id === selectedUserId)
-  );
-
-  // Setters
-  setUsers(users: User[]) {
-    this.setState(state => ({ ...state, users }));
-  }
-
-  setSelectedUserId(id: number) {
-    this.setState(state => ({ ...state, selectedUserId: id }));
-  }
 }

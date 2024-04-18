@@ -17,8 +17,6 @@ export class EjemploTapComponent implements OnInit {
   constructor(private httpExampleService: HttpExampleService) { }
 
   ngOnInit(): void {
-    this.httpExampleService.fetchDataWithTap().subscribe(data => {
-      this.data = data;
-    });
+    
   }
 }

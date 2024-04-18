@@ -17,16 +17,9 @@ las respuestas estén sincronizados con el estado más reciente deseado por el u
 })
 export class EjemploSwitchmapComponent {
   searchControl = new FormControl();
-  results$: Observable<any[]>;
+  //results$: Observable<any[]>;
 
   constructor(private searchService: SwitchmapService) {
-    this.results$ = this.searchControl.valueChanges.pipe(
-      debounceTime(300), // Espera 300ms tras cada pulsación antes de emitir el último valor
-      switchMap(term => this.searchService.search(term)),
-      catchError(error => {
-        console.error('Error occurred:', error);
-        return of([]);
-      })
-    );
+   
   }
 }

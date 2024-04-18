@@ -7,15 +7,8 @@ import { BasicComponentStoreService } from '../../services/basic-component-store
   styleUrl: './counter.component.css'
 })
 export class CounterComponent {
-  count$ = this.store.count$;
+  
   
   constructor(private store: BasicComponentStoreService) { }
 
-  increment() {
-    this.store.increment();
-  }
-
-  decrement() {
-    this.store.decrement();
-  }
 }
